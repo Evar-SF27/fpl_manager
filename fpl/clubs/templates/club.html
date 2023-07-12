@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    MyClub
+{% endblock %}
+
+{% block content %}
+    <header 
+        style="
+            background-image: url('{{ club.ground_url }}');
+            background-size: cover;
+            background-repeat: no-repeat;
+        " 
+        class="h-[400px] w-full flex">
+        <div class="h-[80%] w-full mt-28 flex">
+            <div class="w-[40%] bg-[#FFFFFFBB] flex rounded-tr-[50px]">
+                <div class="flex items-center m-auto">
+                    <img src="{{ club.logo_url }}" class="w-[200px] h-[200px]" />
+                </div>
+            </div>
+            <div class="w-[60%] mt-8 ml-4 text-white">
+                <h1 class="text-[50px] font-bold">{{ club.name }}</h1>
+                <h3 class="text-[20px]">{{ club.stadium }}</h3>
+                <h3 class="text-[20px]">Est: {{ club.date }}</h3>
+            </div>
+        </div>
+    </header>
+    <!-- <div class="mt-6 px-8 py-12 bg-gray-100 rounded-xl">
+        <h2 class="mb-12 text-2xl text-anchor">Points</h2>
+        <div class="grid grid-cols-4 gap-3">
+            <h1>Club Name: {{ club.name }}</h1>
+            <img src="{{ club.logo_url }}" />
+            <h1>Club Name: {{ club.name }}</h1>
+            <h1>Club Name: {{ club.name }}</h1>
+            <h1>Club Name: {{ club.name }}</h1>
+            <h1>Club Name: {{ club.name }}</h1>
+        </div>
+    </div> -->
+
+    
+{% endblock %}
+
+<!-- https://www.premierleague.com/resources/rebrand/v7.124.0/i/elements/pl-main-logo.png -->

@@ -3,6 +3,7 @@ from django.db import models
 # Create your models here.
 class Club(models.Model):
     name = models.CharField(max_length=255)
+    slug = models.CharField(max_length=255, blank=True)
     logo_url = models.CharField(max_length=255)
     stadium = models.CharField(max_length=255)
     rivals = models.CharField(max_length=255)
