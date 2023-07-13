@@ -10,32 +10,123 @@
             background-image: url('{{ club.ground_url }}');
             background-size: cover;
             background-repeat: no-repeat;
+            background-position: center;
+            background-blend-mode: multiply;
         " 
-        class="h-[400px] w-full flex">
-        <div class="h-[80%] w-full mt-28 flex">
-            <div class="w-[40%] bg-[#FFFFFFBB] flex rounded-tr-[50px]">
-                <div class="flex items-center m-auto">
-                    <img src="{{ club.logo_url }}" class="w-[200px] h-[200px]" />
+        class="w-full h-[400px] sm:h-[450px]">
+        <div class="bg-[#00000099] h-full w-full flex">
+            <div class="flex h-[35%] mt-[260px] w-full sm:mt-[115px] sm:h-[75%]">
+                <div class="w-[30%] sm:w-[35%] bg-[#FFFFFF88] flex rounded-tr-[40px]">
+                    <div class="flex items-center m-auto">
+                        <img src="{{ club.logo_url }}" class="w-[80px] h-[80px] sm:w-[240px] sm:h-[240px]" />
+                    </div>
                 </div>
-            </div>
-            <div class="w-[60%] mt-8 ml-4 text-white">
-                <h1 class="text-[50px] font-bold">{{ club.name }}</h1>
-                <h3 class="text-[20px]">{{ club.stadium }}</h3>
-                <h3 class="text-[20px]">Est: {{ club.date }}</h3>
+                <div class="w-[70%] sm:w-[65%] text-white">
+                    <div class="px-4 sm:px-12 pt-[40px] sm:pt-[140px]">
+                        <h3 class="font-bold text-[20px] sm:text-[50px]">{{ club.name }}</h3>
+                        <p class="sm:text-[30px] text-[16px]">{{ club.stadium }}</p>
+                        <p class="sm:text-[30px]">Est: {{ club.date }}</p>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
-    <!-- <div class="mt-6 px-8 py-12 bg-gray-100 rounded-xl">
-        <h2 class="mb-12 text-2xl text-anchor">Points</h2>
-        <div class="grid grid-cols-4 gap-3">
-            <h1>Club Name: {{ club.name }}</h1>
-            <img src="{{ club.logo_url }}" />
-            <h1>Club Name: {{ club.name }}</h1>
-            <h1>Club Name: {{ club.name }}</h1>
-            <h1>Club Name: {{ club.name }}</h1>
-            <h1>Club Name: {{ club.name }}</h1>
+    <div class="mx-4 mt-8 sm:mx-8 sm:mt-12">
+        <h1 class="text-[40px] font-bold sm:text-[50px]">Club Info</h1>
+        <div class="flex flex-col mt-4 px-4 border-t border-b py-4 space-y-2 sm:flex-row sm:px-8">
+            <div class="space-y-2 sm:w-[50%]">
+                <p class="sm:text-[30px]">
+                    <span class="font-semibold">Club Name: </span>
+                    {{ club.name }}
+                </p>
+                <p class="sm:text-[30px]">
+                    <span class="font-semibold">Founded: </span>
+                    {{ club.date }}
+                </p>
+                <p class="sm:text-[30px]">
+                    <span class="font-semibold">Nickname: </span>
+                    {{ club.nickname }}
+                </p>
+                <p class="sm:text-[30px]">
+                    <span class="font-semibold">Rivals: </span>
+                    {{ club.rivals }}
+                </p>
+            </div>
+            <div class="space-y-2 sm:w-[50%]">
+                <p class="sm:text-[30px]">
+                    <span class="font-semibold">Ground: </span>
+                    {{ club.stadium }}
+                </p>
+                <p class="sm:text-[30px]">
+                    <span class="font-semibold">Capacity: </span>
+                    {{ club.capacity }}
+                </p>
+                <br>
+                <br>
+                <p class="sm:text-[30px]">
+                    <span class="font-semibold">Manager: </span>
+                    {{ club.coach }}
+                </p>
+            </div>
         </div>
-    </div> -->
+    </div>
+    <div class="mx-4 mt-8 sm:mx-8 sm:mt-12">
+        <h1 class="text-[40px] font-bold sm:text-[50px]">Club Kits</h1>
+        <div class="mx-4 sm:mx-8 mt-4 flex flex-col md:flex-row md:space-x-4 items-center">
+            <div class="border h-[500px] md:h-[350px] w-[300px] bg-[#F3F3F3] rounded-2xl border-b-[#CC00FF] border-b-[8px] flex flex-col items-center justify-center space-y-12 md:space-y-8">
+                <div>
+                    {% if club.jersey_one %}
+                        <img src="{{ club.jersey_one }}" />
+                    {% else %}
+                        <img src="https://resources.premierleague.com/photos/premierleague/photo/2018/06/01/c850cded-8f1b-406b-a46e-d5743e389ece/PL-1819-Blank-516.png?width=260&height=330" />
+                    {% endif%}
+                </div>
+                <div class="flex flex-col items-center">
+                    <p class="font-bold text-[18px]">2023/2024</p>
+                    <p class="font-semibold text-[18px]">Home Kit</p>
+                </div>
+            </div>
+            <div class="border h-[500px] md:h-[350px] w-[300px] bg-[#F3F3F3] rounded-2xl border-b-[#CC00FF] border-b-[8px] flex flex-col items-center justify-center space-y-12 md:space-y-8">
+                <div>
+                    {% if club.jersey_two %}
+                        <img src="{{ club.jersey_two }}" />
+                    {% else %}
+                        <img src="https://resources.premierleague.com/photos/premierleague/photo/2018/06/01/c850cded-8f1b-406b-a46e-d5743e389ece/PL-1819-Blank-516.png?width=260&height=330" />
+                    {% endif%}
+                </div>
+                <div class="flex flex-col items-center">
+                    <p class="font-bold text-[18px]">2023/2024</p>
+                    <p class="font-semibold text-[18px]">Away Kit</p>
+                </div>
+            </div>
+            <div class="border h-[500px] md:h-[350px] w-[300px] bg-[#F3F3F3] rounded-2xl border-b-[#CC00FF] border-b-[8px] flex flex-col items-center justify-center space-y-12 md:space-y-8">
+                <div>
+                    {% if club.jersey_three %}
+                        <img src="{{ club.jersey_three }}" />
+                    {% else %}
+                        <img src="https://resources.premierleague.com/photos/premierleague/photo/2018/06/01/c850cded-8f1b-406b-a46e-d5743e389ece/PL-1819-Blank-516.png?width=260&height=330" />
+                    {% endif%}
+                </div>
+                <div class="flex flex-col items-center">
+                    <p class="font-bold text-[18px]">2023/2024</p>
+                    <p class="font-semibold text-[18px]">Third Kit</p>
+                </div>
+            </div>
+            <div class="border h-[500px] md:h-[350px] w-[300px] bg-[#F3F3F3] rounded-2xl border-b-[#CC00FF] border-b-[8px] flex flex-col items-center justify-center space-y-12 md:space-y-8">
+                <div>
+                    {% if club.goalkeeper %}
+                        <img src="{{ club.goalkeeper }}" />
+                    {% else %}
+                        <img src="https://resources.premierleague.com/photos/premierleague/photo/2018/06/01/c850cded-8f1b-406b-a46e-d5743e389ece/PL-1819-Blank-516.png?width=260&height=330" />
+                    {% endif%}
+                </div>
+                <div class="flex flex-col items-center">
+                    <p class="font-bold text-[18px]">2023/2024</p>
+                    <p class="font-semibold text-[18px]">Goalkeeper Kit</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     
 {% endblock %}
