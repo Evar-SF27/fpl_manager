@@ -1,7 +1,6 @@
 .back {
-    background-image: url('images/pl.png');
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-image: url('../images/pl.png');
     background-position: center;
-    background-blend-mode: multiply;
+    background-repeat: no-repeat;
+    opacity: 0.4;
 }
