@@ -52,7 +52,7 @@
             <div class="absolute my-2 mx-4">
                 <img src="https://www.premierleague.com/resources/rebrand/v7.126.2/i/elements/pl-main-logo.png" class="w-[90px] flex items-center h-[100px]" />
             </div>
-            <div class="bg-[#330033] h-[80px] w-[100%] pl-[150px] flex items-center text-white font-bold text-[16px]">
+            <div class="bg-[#330033] h-[75px] w-[100%] pl-[150px] flex items-center text-white font-bold text-[16px]">
                 <nav class="flex w-[90%]">
                     <ul class="flex w-[600px] justify-around">
                         <li><a href="https://www.premierleague.com/fixtures" target="_blank">Fixtures</a></li>
@@ -76,7 +76,12 @@
     </div>
     {% block content %}
     {% endblock %}
-    <footer>
+    <footer class="flex text-white bg-[#330033] h-[100px] items-center justify-between px-8">
+        <p class="font-bold">FPL Custom League Finance Manager</p>
+        <div class="flex">
+            <p class="ml-4 px-2 border-r">Terms & Conditions</p>
+            <p class="px-2 border-r">Privacy Policy</p>
+        </div>
     </footer>
 </body>
 </html>
