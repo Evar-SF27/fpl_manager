@@ -5,8 +5,27 @@
 {% endblock %}
 
 {% block content %}
-    <div class="">
-
+    <div 
+        style="
+            background-image: url('https://wallpapercave.com/wp/wp5227766.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-blend-mode: multiply;
+        "  
+        class="h-[300px] relative"
+    >
+        
+        <nav class="absolute bottom-0 ml-4">
+            <ul class="flex">
+                <li class="flex bg-[#530053] items-center h-[45px] px-6 mr-1 rounded-t-[12px] text-[14px] text-white font-semibold"><a href="#">Home</a></li>
+                <li class="flex bg-[#530053] items-center h-[45px] px-6 mr-1 rounded-t-[12px] text-[14px] text-white font-semibold"><a href="#">Team</a></li>
+                <li class="flex bg-[#530053] items-center h-[45px] px-6 mr-1 rounded-t-[12px] text-[14px] text-white font-semibold"><a href="#">Leagues</a></li>
+                <li class="flex bg-[#530053] items-center h-[45px] px-6 mr-1 rounded-t-[12px] text-[14px] text-white font-semibold"><a href="#">Statistcs</a></li>
+                <li class="flex bg-[#530053] items-center h-[45px] px-6 mr-1 rounded-t-[12px] text-[14px] text-white font-semibold"><a href="#">Profile</a></li>
+                <li class="flex bg-[#530053] items-center h-[45px] px-6 mr-1 rounded-t-[12px] text-[14px] text-white font-semibold"><a href="#">About</a></li>
+            </ul>
+        </nav>
     </div>
     <div class="mt-6 px-8 py-12 bg-gray-100 rounded-xl">
         <h2 class="mb-12 text-2xl text-anchor">Points</h2>
@@ -17,7 +36,7 @@
                         <div>
                             <img src="media/{{ item.image }}" class="rounded-t-xl h-[300px] w-[100%] object-fit" />
                         </div>
-                        <div class="p-6 bg-white rounded-b-xl">
+                        <div class="p-6 rounded-b-xl">
                             <h2 class="text-2xl">{{ item.name }}</h2>
                             <p class="text-gray-500">Price: {{ item.price }}</p>
                         </div>
@@ -33,7 +52,7 @@
             <!-- {% for category in categories %}
                 <div>
                     <a href="#">
-                        <div class="p-6 bg-white rounded-b-xl">
+                        <div class="p-6 rounded-b-xl">
                             <h2 class="text-2xl">{{ category.name }}</h2>
                             <p class="text-gray-500">{{ category.items.count }} items</p>
                         </div>
